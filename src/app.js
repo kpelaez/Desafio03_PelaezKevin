@@ -6,7 +6,7 @@ const app = express();
 app.get('/products', (req,res) =>{
     const limit = req.query.limit;
 
-    const PM = new ProductManager('../productos.txt');
+    const PM = new ProductManager('/productos.txt');
     PM.cargarArchivo();
 
     const products = JSON.parse(PM.getProducts());
